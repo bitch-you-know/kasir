@@ -1,11 +1,12 @@
 import React from "react";
 import {Nav,Navbar,Container,NavDropdown,Form,Button} from 'react-bootstrap'
+import "../index.css"
 
 const NavbarComponent=()=>{
   return(
-    <Navbar expand="lg" className="bg-body-tertiary">
-    <Container fluid>
-      <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+    <Navbar expand="lg" variant="dark" className="navbarStyle   text-bg-info ">
+    <Container>
+      <Navbar.Brand href="#" className="text-light"><strong>kasir</strong></Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -13,10 +14,10 @@ const NavbarComponent=()=>{
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href="#action1">Home</Nav.Link>
-          <Nav.Link href="#action2">Link</Nav.Link>
+          <Nav.Link href="#action1" className="text-light">Home</Nav.Link>
+          <Nav.Link href="#action2" className="text-light">Link</Nav.Link>
           <NavDropdown title="Link" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action3" >Action</NavDropdown.Item>
             <NavDropdown.Item href="#action4">
               Another action
             </NavDropdown.Item>
