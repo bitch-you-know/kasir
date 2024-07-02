@@ -1,10 +1,11 @@
 import NavbarComponent from "./components/NavbarComponent"
 import { Col, Row, Container, DropdownDivider } from "react-bootstrap"
 import ListCategories from "./components/ListCategories"
-import Hasil from "./components/Hasil"
 import { Component } from "react"
 import { API_URL } from "./lib/constants"
 import axios from "axios"
+import Menus from "./components/Menus"
+import Hasil from "./components/Hasil"
 
 
 export default class App extends Component {
@@ -18,7 +19,7 @@ export default class App extends Component {
 
    componentDidMount(){
    axios 
-   .get(API_URL+"products2")
+   .get(API_URL+"products")
    .then(res => {
     console.log("Rsponse : ",res)
     const menus = res.data;
@@ -31,7 +32,7 @@ export default class App extends Component {
 
 
   render(){
-    console.log(this.state.menus)
+    const {menus} = this.state
     return(
       <div className="app">
 
@@ -42,12 +43,19 @@ export default class App extends Component {
             <ListCategories />
             <Col>
               <h4><strong>Daftar Prodak</strong></h4>
-              <div>
-                <ul></ul>
-              </div>
+              <hr />
+              <Row>
+                {menus && menus.map((items)=>(
+                  <Menus
+                   namaMakanan={items.nama}
+                  />
+                ))}
+              </Row>
+              <Hasil/>
             </Col>
-            <Hasil />
+           
           </Row>
+
         </Container>
         <DropdownDivider/>
       
