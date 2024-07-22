@@ -1,13 +1,16 @@
-import { Component } from "react";
-import { Col } from "react-bootstrap";
+import { Col, } from "react-bootstrap"
+import { useEffect } from "react"
 
-export default  class ListCategories extends Component {
-    render() {
-        return(
-            <Col md={2} mt="2">
-                  <h4><strong>Daftar Categori</strong></h4>
-                  <hr/>
-            </Col>
-        )
-    }
+const ListCategories = () => {
+    
+    return (
+       
+            <Col md={2} >
+            <h4>Daftar Kategori</h4>
+            <hr />
+        </Col>
+       
+    )
 }
+
+export default ListCategories

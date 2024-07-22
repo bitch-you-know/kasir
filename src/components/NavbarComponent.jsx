@@ -4,7 +4,7 @@ import "../index.css"
 
 const NavbarComponent=()=>{
   return(
-    <Navbar expand="lg" variant="dark" className="navbarStyle   text-bg-info ">
+    <Navbar expand="lg" variant="dark" className="navbarStyle   bg-primary text-white ">
     <Container>
       <Navbar.Brand href="#" className="text-light"><strong>kasir</strong></Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
@@ -30,15 +30,7 @@ const NavbarComponent=()=>{
             Link
           </Nav.Link>
         </Nav>
-        <Form className="d-flex">
-          <Form.Control
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-          />
-          <Button variant="outline-success">Search</Button>
-        </Form>
+       
       </Navbar.Collapse>
     </Container>
   </Navbar>
