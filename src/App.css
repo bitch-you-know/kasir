@@ -32,10 +32,11 @@
     animation: logo-spin infinite 20s linear;
   }
 }
-
-.card {
-height:30rem;
+#gg{
+  background-color: rgb(243, 243, 243);
+   box-shadow: 10px;
 }
+
 
 .custom-card-img {
   height: 200px; /* Atur tinggi gambar sesuai kebutuhan */

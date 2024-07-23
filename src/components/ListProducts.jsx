@@ -1,15 +1,18 @@
 import { Col, Card, Button, Row } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { axiosinstance } from '../lib/axios';
+import '../App.css'
+import { useSelector } from 'react-redux';
 
 const ListProducts = () => {
     const [products, setProduct] = useState([]);
+    const menu =useSelector((store)=>store.category.menu )
 
     const getProduct = async () => {
         try {
-            const result = await axiosinstance.get("/products");
+            const result = await axiosinstance.get("/products?category.nama="+menu);
             setProduct(result.data);
-            console.log(result);
+            // console.log(result);
         } catch (error) {
             console.log(error);
         }
@@ -33,8 +36,8 @@ const ListProducts = () => {
             <hr />
             <Row>
                 {products.map((list) => (
-                    <Col key={list.id} md={3} xs={6} className="mb-4">
-                        <Card className="card h-100  ">
+                    <Col key={list.id} md={4} xs={6} className="mb-4">
+                        <Card id='gg' className="card  h-60 ">
 
                             <Card.Img className="custom-card-img" variant="top" src={"public/images/" + list.category.nama + "/" + list.gambar} />
                             <Card.Body className="d-flex flex-column flex-grow-1">

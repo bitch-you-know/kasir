@@ -15,7 +15,7 @@ const DashBoard= () => {
 
       <NavbarComponent />
       
-      <div className="d-flex justify-content-center ">
+      
         <Container fluid>
           <Row>
             <ListCategories className="" />
@@ -30,7 +30,7 @@ const DashBoard= () => {
         </Container>
         <DropdownDivider/>
       
-      </div>
+      
 
       </div>
   )
