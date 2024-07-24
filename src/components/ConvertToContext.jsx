@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 
+export const ConvertToContext = createContext({
+  formatRupiah: (number) => {},
+  keranjang: [],
+  setKeranjang: () => {}
+});
 
-export const ConvertToContext = React.createContext({
-    formatRupiah: (number) => {},
-  });
+export const ConvertContextProvider = ({ children }) => {
+  const [keranjangs, setKeranjangs] = useState([]);
 
-export const ConvertContextProvider = ConvertToContext.Provider;
-export const ConvertContextConsumer = ConvertToContext.Consumer;
+  const formatRupiah = (number) => {
+    return new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 0,
+    }).format(number);
+  };
+
+  return (
+    <ConvertToContext.Provider value={{ formatRupiah, keranjangs, setKeranjangs }}>
+      {children}
+    </ConvertToContext.Provider>
+  );
+};
