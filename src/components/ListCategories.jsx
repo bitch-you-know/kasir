@@ -34,7 +34,7 @@ const ListCategories = () => {
         console.log('Clicked category:', category);
         setValueCategory(category);
         if (category === "Makanan") {
-            dispatch({ type: "SET_MINUMAN" });
+            dispatch({ type: "SET_MAKANAN" });
         } else if (category === "Minuman") {
             dispatch({ type: "SET_MINUMAN" });
         } else if (category === "Cemilan") {

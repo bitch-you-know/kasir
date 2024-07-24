@@ -4,7 +4,7 @@ import { axiosinstance } from '../lib/axios';
 import '../App.css'
 import { useSelector } from 'react-redux';
 
-const ListProducts = () => {
+const ListProducts = ({addList}) => {
     const [products, setProduct] = useState([]);
     const menu =useSelector((store)=>store.category.menu )
 
@@ -20,7 +20,7 @@ const ListProducts = () => {
 
     useEffect(() => {
         getProduct();
-    }, []);
+    }, [menu]);
 
     const formatRupiah = (number) => {
         return new Intl.NumberFormat('id-ID', {
@@ -49,7 +49,7 @@ const ListProducts = () => {
                             </Card.Body>
                             <Card.Footer>
                                 {formatRupiah(list.harga)} br
-                                <Button size='sm' variant="primary">pesan sekarang</Button>
+                                <Button onClick={()=>addList(list)} size='sm' variant="primary">pesan sekarang</Button>
 
                             </Card.Footer>
                         </Card>

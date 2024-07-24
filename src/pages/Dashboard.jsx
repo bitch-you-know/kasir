@@ -7,7 +7,9 @@ import ListProducts from "../components/ListProducts"
 const DashBoard= () => {
   
     
-   
+ const addKeranjang =(list)=>{
+  console.log(list)
+ }  
 
 
   return(
