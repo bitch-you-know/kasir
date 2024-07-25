@@ -2,6 +2,9 @@ import { Component, useEffect, useState, useContext } from "react";
 import { Card, Col, Badge, CardBody, ListGroup, ListGroupItem, Row, CardHeader, CardFooter, Button } from "react-bootstrap";
 import { axiosinstance } from "../lib/axios";
 import { ConvertToContext } from "./ConvertToContext";
+import { faUtensils, faCoffee, faChess } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart";
 
 const Hasil = () => {
     const [keranjang, setKeranjang] = useState([])
@@ -41,17 +44,17 @@ const Hasil = () => {
 
 
 
-        <Col md={3} mt={2}>
+        <Col  md={3} mt={2}>
             <h3>List order</h3>
             <hr />
-            <Card id="card" className="shadow p-3 mb-5 bg-body-tertiary rounded h-screen">
+            <Card id="card" className="shadow p-3 mb-5 bg-body-tertiary rounded">
                 <CardHeader><h3>Pesan</h3></CardHeader>
                 <CardBody>
                     <ListGroup>
                         {keranjang.map((list) => (
                             <ListGroupItem key={list.id}>
                                 <Row>
-                                    <Col>
+                                    <Col className="p-1 m-1 g-col-6">
                                         <Badge className="rounded-circle" bg="success">{list.jumlah}</Badge>
                                     </Col>
                                     <Col>
@@ -60,6 +63,7 @@ const Hasil = () => {
                                     <Col>
                                         {formatRupiah(list.total_harga)}
                                         <Button onClick={() => deleteKeranjangs(list.id)} className="btn btn-danger btn-sm">Hapus</Button>
+                                        
                                     </Col>                                   
                                 </Row>
                             </ListGroupItem>
@@ -70,7 +74,7 @@ const Hasil = () => {
 
                     <Col>              
                         <Row><strong>Total Harga :  {total}</strong></Row> 
-                        <Button  variant="outline-success">Bayar Sekarang</Button>            
+                        <Button  variant="outline-success"> <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />Bayar Sekarang</Button>            
                     </Col>
 
                 </CardFooter>

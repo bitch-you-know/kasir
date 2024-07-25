@@ -219,6 +219,24 @@
           "nama": "Minuman"
         }
       }
+    },
+    {
+      "id": "5464",
+      "jumlah": 6,
+      "nama": "Cheese Burger",
+      "total_harga": 90000,
+      "product": {
+        "id": "10",
+        "kode": "K-010",
+        "nama": "Cheese Burger",
+        "harga": 15000,
+        "is_ready": true,
+        "gambar": "cheese-burger.jpg",
+        "category": {
+          "id": 3,
+          "nama": "Cemilan"
+        }
+      }
     }
   ],
   "pesanans": [

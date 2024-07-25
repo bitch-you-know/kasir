@@ -16,19 +16,7 @@ const NavbarComponent=()=>{
         >
           <Nav.Link href="#action1" className="text-light">Home</Nav.Link>
           <Nav.Link href="#action2" className="text-light">Link</Nav.Link>
-          <NavDropdown title="Link" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3" >Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5">
-              Something else here
-            </NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link href="#" disabled>
-            Link
-          </Nav.Link>
+          
         </Nav>
        
       </Navbar.Collapse>
