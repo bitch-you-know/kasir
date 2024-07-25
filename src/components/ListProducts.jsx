@@ -30,14 +30,14 @@ const ListProducts = ({ addList }) => {
       <Row>
         {products.map((list) => (
           <Col key={list.id} md={4} xs={6} className="mb-4">
-            <Card id='gg' className="card h-60">
+            <Card id='gg' className="card h-60 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
               <Card.Img className="custom-card-img" variant="top" src={`public/images/${list.category.nama}/${list.gambar}`} />
               <Card.Body className="d-flex flex-column flex-grow-1">
-                <Card.Title><h5>{list.nama}</h5> <p>({list.kode})</p></Card.Title>
+                <Card.Title><h5>{list.nama}</h5>({list.kode})</Card.Title>
+                {formatRupiah(list.harga)}
               </Card.Body>
               <Card.Footer>
-                {formatRupiah(list.harga)} <br />
-                <Button onClick={() => addList(list)} size='sm' variant="primary">pesan sekarang</Button>
+                <Button style={{ cursor: 'pointer' }} onClick={() => addList(list)} size='sm' variant="primary">Tambah Pesanan</Button>
               </Card.Footer>
             </Card>
           </Col>

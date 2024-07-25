@@ -42,3 +42,7 @@
   height: 200px; /* Atur tinggi gambar sesuai kebutuhan */
   object-fit: cover; /* Agar gambar tetap terjaga aspeknya */
 }
+
+#card {
+  height:60vh
+}

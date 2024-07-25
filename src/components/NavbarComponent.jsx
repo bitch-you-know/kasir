@@ -6,7 +6,7 @@ const NavbarComponent=()=>{
   return(
     <Navbar expand="lg" variant="dark" className="navbarStyle   bg-primary text-white ">
     <Container>
-      <Navbar.Brand href="#" className="text-light"><strong>kasir</strong></Navbar.Brand>
+      <Navbar.Brand href="#" className="text-light fs-1"><strong>kasir</strong></Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
