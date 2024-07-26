@@ -1,6 +1,7 @@
 import React from "react";
 import {Nav,Navbar,Container,NavDropdown,Form,Button} from 'react-bootstrap'
 import "../index.css"
+import { Link } from "react-router-dom";
 
 const NavbarComponent=()=>{
   return(
@@ -14,8 +15,8 @@ const NavbarComponent=()=>{
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href="#action1" className="text-light">Home</Nav.Link>
-          <Nav.Link href="#action2" className="text-light">Link</Nav.Link>
+          <Nav.Link ><Link className="text-light" to={"/"}> DashBoard</Link></Nav.Link>
+          <Nav.Link ><Link  className="text-light" to={"riwayat"}>Riwayat Transaksi</Link></Nav.Link>
           
         </Nav>
        

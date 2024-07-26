@@ -3,9 +3,7 @@ import ListCategories from "../components/ListCategories";
 import Hasil from "../components/Hasil";
 import { Container, Row, Col, DropdownDivider } from 'react-bootstrap';
 import ListProducts from "../components/ListProducts";
-import { ConvertContextProvider } from "../components/ConvertToContext";
 import { axiosinstance } from "../lib/axios";
-import { useEffect } from "react";
 import swal from "sweetalert";
 const DashBoard = () => {
 
@@ -50,7 +48,7 @@ const DashBoard = () => {
 
 
   return (
-    <ConvertContextProvider>
+    <>
       <NavbarComponent />
       <Container fluid>
         <Row>
@@ -60,7 +58,7 @@ const DashBoard = () => {
         </Row>
       </Container>
       <DropdownDivider />
-    </ConvertContextProvider>
+    </>
   );
 };
 

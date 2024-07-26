@@ -1,17 +1,19 @@
 import { Component, useEffect, useState, useContext } from "react";
-import { Card, Col, Badge, CardBody, ListGroup, ListGroupItem, Row, CardHeader, CardFooter, Button } from "react-bootstrap";
+import { Card, Col, Badge, CardBody, ListGroup, ListGroupItem, Row, CardHeader, CardFooter, Button, InputGroup } from "react-bootstrap";
 import { axiosinstance } from "../lib/axios";
 import { ConvertToContext } from "./ConvertToContext";
-import { faUtensils, faCoffee, faChess } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart";
+import { useNavigate } from "react-router-dom";
 
 const Hasil = () => {
     const [keranjang, setKeranjang] = useState([])
     const { formatRupiah } = useContext(ConvertToContext)
-    const [total, setTotal] = useState([])
+    const [total, setTotal] = useState(0)
+    const navigate = useNavigate()
+    const [tableNumber,setTableNumber]=useState()
 
-
+    // GET KERANJANG
     const getKeranjangs = async () => {
         try {
             const result = await axiosinstance.get("/keranjangs");
@@ -19,32 +21,49 @@ const Hasil = () => {
             if (result.status === 200) {
                 console.log(result)
                 setKeranjang(result.data)
-                
                 setTotal(totalPrice)
             }
         } catch (error) {
             console.log(error);
-        }};
+        }
+    };
 
-    const deleteKeranjangs = async(id)=>{
-          try {
-            const result =await axiosinstance.delete(`keranjangs/${id}`)
-            console.log("Item keranjang berhasil dihapus:", result.data);
-            getKeranjangs()
-          } catch (error) {
-            console.log(error.message)
-          }
-    }
+    // POST TO PESANAN
+    const postToPesanan = async () => {
+        const data = {
+
+        }
+        try {
+            const result = await axiosinstance.post("/pesanans", { items: keranjang });
+            if (result.status === 201) {
+                console.log("Pesanan berhasil dibuat:", result);
+                deleteAllKeranjangs(); // Hapus semua item di keranjang setelah pesanan berhasil dibuat
+                navigate("/success")
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    // DELETE KERANJANGS
+    const deleteAllKeranjangs = async () => {
+        try {
+            const deletePromises = keranjang.map(item => axiosinstance.delete(`/keranjangs/${item.id}`));
+            await Promise.all(deletePromises);
+            console.log("Semua item keranjang berhasil dihapus.");
+            setKeranjang([]); // Perbarui tampilan keranjang agar kosong
+            setTotal(0); // Set total harga menjadi 0
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
 
     useEffect(() => {
-        getKeranjangs()
-    }, [])
+        getKeranjangs();
+    }, []);
 
     return (
-
-
-
-        <Col  md={3} mt={2}>
+        <Col md={3} mt={2}>
             <h3>List order</h3>
             <hr />
             <Card id="card" className="shadow p-3 mb-5 bg-body-tertiary rounded">
@@ -61,29 +80,25 @@ const Hasil = () => {
                                         {list.nama}
                                     </Col>
                                     <Col>
-                                        {formatRupiah(list.total_harga)}
-                                        <Button onClick={() => deleteKeranjangs(list.id)} className="btn btn-danger btn-sm">Hapus</Button>
-                                        
-                                    </Col>                                   
+                                        {formatRupiah(list.total_harga)} <br />
+                                    </Col>
                                 </Row>
                             </ListGroupItem>
                         ))}
                     </ListGroup>
                 </CardBody>
                 <CardFooter>
-
-                    <Col>              
-                        <Row><strong>Total Harga :  {total}</strong></Row> 
-                        <Button  variant="outline-success"> <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />Bayar Sekarang</Button>            
+                    <Col>      <p>No meja</p>
+                              <input type="number"/>
+                            <Row><strong>Total Harga :  {formatRupiah(total)}</strong></Row>
+                            <Button variant="outline-success" onClick={postToPesanan} onChange={""}>
+                                <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />Bayar Sekarang
+                            </Button>
                     </Col>
-
                 </CardFooter>
             </Card>
         </Col>
-
-
     )
 }
-
 
 export default Hasil

@@ -185,17 +185,17 @@
   ],
   "keranjangs": [
     {
-      "id": "a5d9",
+      "id": "4de7",
       "jumlah": 1,
-      "nama": "Coffe Late",
-      "total_harga": 15000,
+      "nama": "Es Jeruk",
+      "total_harga": 7000,
       "product": {
-        "id": "11",
-        "kode": "K-011",
-        "nama": "Coffe Late",
-        "harga": 15000,
+        "id": "12",
+        "kode": "K-012",
+        "nama": "Es Jeruk",
+        "harga": 7000,
         "is_ready": true,
-        "gambar": "coffe-late.jpg",
+        "gambar": "es-jeruk.jpg",
         "category": {
           "id": 2,
           "nama": "Minuman"
@@ -203,7 +203,7 @@
       }
     },
     {
-      "id": "974a",
+      "id": "4a0d",
       "jumlah": 1,
       "nama": "Es Teh",
       "total_harga": 5000,
@@ -219,67 +219,90 @@
           "nama": "Minuman"
         }
       }
-    },
-    {
-      "id": "5464",
-      "jumlah": 6,
-      "nama": "Cheese Burger",
-      "total_harga": 90000,
-      "product": {
-        "id": "10",
-        "kode": "K-010",
-        "nama": "Cheese Burger",
-        "harga": 15000,
-        "is_ready": true,
-        "gambar": "cheese-burger.jpg",
-        "category": {
-          "id": 3,
-          "nama": "Cemilan"
-        }
-      }
     }
   ],
   "pesanans": [
     {
-      "total_bayar": 60000,
-      "menus": [
+      "id": "6564",
+      "items": [
         {
-          "jumlah": 2,
-          "total_harga": 32000,
+          "id": "5b68",
+          "jumlah": 1,
+          "nama": "Es Jeruk",
+          "total_harga": 7000,
           "product": {
-            "id": 1,
-            "kode": "K-01",
-            "nama": "Sate Ayam",
-            "harga": 16000,
+            "id": "12",
+            "kode": "K-012",
+            "nama": "Es Jeruk",
+            "harga": 7000,
             "is_ready": true,
-            "gambar": "sate-ayam.jpg",
+            "gambar": "es-jeruk.jpg",
             "category": {
-              "id": 1,
-              "nama": "Makanan"
+              "id": 2,
+              "nama": "Minuman"
             }
-          },
-          "keterangan": "Semuanya Pedas",
-          "id": 1
+          }
         },
         {
-          "jumlah": 2,
-          "total_harga": 28000,
+          "id": "d031",
+          "jumlah": 1,
+          "nama": "Coffe Late",
+          "total_harga": 15000,
           "product": {
-            "id": 2,
-            "kode": "K-02",
-            "nama": "Nasi Goreng Telur",
-            "harga": 14000,
+            "id": "11",
+            "kode": "K-011",
+            "nama": "Coffe Late",
+            "harga": 15000,
             "is_ready": true,
-            "gambar": "nasi-goreng-telor.jpg",
+            "gambar": "coffe-late.jpg",
             "category": {
-              "id": 1,
-              "nama": "Makanan"
+              "id": 2,
+              "nama": "Minuman"
             }
-          },
-          "id": 3
+          }
         }
-      ],
-      "id": "1"
+      ]
+    },
+    {
+      "id": "1d84",
+      "items": [
+        {
+          "id": "5837",
+          "jumlah": 1,
+          "nama": "Es Teh",
+          "total_harga": 5000,
+          "product": {
+            "id": "13",
+            "kode": "K-013",
+            "nama": "Es Teh",
+            "harga": 5000,
+            "is_ready": true,
+            "gambar": "es-teh.jpg",
+            "category": {
+              "id": 2,
+              "nama": "Minuman"
+            }
+          }
+        },
+        {
+          "id": "c9d8",
+          "jumlah": 1,
+          "nama": "Es Jeruk",
+          "total_harga": 7000,
+          "product": {
+            "id": "12",
+            "kode": "K-012",
+            "nama": "Es Jeruk",
+            "harga": 7000,
+            "is_ready": true,
+            "gambar": "es-jeruk.jpg",
+            "category": {
+              "id": 2,
+              "nama": "Minuman"
+            }
+          }
+        }
+      ]
     }
   ]
 }

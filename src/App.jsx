@@ -2,15 +2,29 @@ import { axiosinstance } from "./lib/axios"
 import DashBoard from "./pages/Dashboard"
 import { useEffect } from 'react'
 import './App.css'
+import { Route, Routes } from "react-router-dom"
+import RiwayatTransaksi from "./pages/RiwayatTransaksi"
+import { ConvertContextProvider } from "./components/ConvertToContext"
+import Succes from "./pages/Success"
 
 
 
-const App =()=>{
+const App = () => {
 
-  return(
+  return (
     <>
-      <DashBoard/>
+    <ConvertContextProvider>
+      <Routes>
+        <Route element={<DashBoard />} path="/" />
+        <Route element={<RiwayatTransaksi />} path="/riwayat"/>
+        <Route element={<Succes />} path="/Success" />
+      </Routes>
+    </ConvertContextProvider>
     </>
+    
+
+
+
   )
 }
 

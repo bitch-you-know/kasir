@@ -5,13 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { createStore } from 'redux'
 import { reducers } from './store/store.js'
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const store = createStore(reducers)
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <Provider store={store}>
-   <App />
-   </Provider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
 )
