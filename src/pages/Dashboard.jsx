@@ -1,4 +1,4 @@
-import NavbarComponent from "../components/NavbarComponent";
+import NavbarComponent from "../components/Navbar";
 import ListCategories from "../components/ListCategories";
 import Hasil from "../components/Hasil";
 import { Container, Row, Col, DropdownDivider } from 'react-bootstrap';
