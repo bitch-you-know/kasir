@@ -31,10 +31,10 @@ const Hasil = () => {
     // POST TO PESANAN
     const postToPesanan = async () => {
         const data = {
-
+            
         }
         try {
-            const result = await axiosinstance.post("/pesanans", { items: keranjang });
+            const result = await axiosinstance.post("/pesanans", { items: keranjang, noMeja:tableNumber });
             if (result.status === 201) {
                 console.log("Pesanan berhasil dibuat:", result);
                 deleteAllKeranjangs(); // Hapus semua item di keranjang setelah pesanan berhasil dibuat
@@ -89,9 +89,14 @@ const Hasil = () => {
                 </CardBody>
                 <CardFooter>
                     <Col>      <p>No meja</p>
-                              <input type="number"/>
+                              <input type="string"
+                               onChange={(event)=>{
+                                     setTableNumber(event.target.value)
+                                  
+                               }}
+                              />
                             <Row><strong>Total Harga :  {formatRupiah(total)}</strong></Row>
-                            <Button variant="outline-success" onClick={postToPesanan} onChange={""}>
+                            <Button variant="outline-success" onClick={postToPesanan} >
                                 <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />Bayar Sekarang
                             </Button>
                     </Col>

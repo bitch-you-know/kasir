@@ -39,7 +39,10 @@ const RiwayatTransaksi = () => {
                             <ListGroup>
                                 {pesanans.map((list) => (
                                     <ListGroupItem key={list.id}>
-                                        <strong>pesanan No {list.id}</strong>  
+                                        <strong>pesanan No {list.id}</strong>
+                                          {list.items.map(item=>(
+                                            <h1>{item.id}</h1>
+                                          ))}
                                         <Button className="ms-2"> Detail</Button>
                                     </ListGroupItem>
                                 ))}
