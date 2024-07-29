@@ -1,7 +1,7 @@
 import NavbarComponent from "../components/Navbar";
 import ListCategories from "../components/ListCategories";
 import Hasil from "../components/Hasil";
-import { Container, Row, Col, DropdownDivider } from 'react-bootstrap';
+import { Container, Row, DropdownDivider } from 'react-bootstrap';
 import ListProducts from "../components/ListProducts";
 import { axiosinstance } from "../lib/axios";
 import swal from "sweetalert";

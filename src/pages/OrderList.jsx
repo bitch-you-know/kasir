@@ -1,9 +1,9 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, ListGroup, ListGroupItem } from "react-bootstrap"
+import { Button, Card, CardBody, CardFooter, CardHeader, ListGroup, ListGroupItem, Modal } from "react-bootstrap"
 import NavbarComponent from "../components/Navbar"
 import { axiosinstance } from "../lib/axios"
 import { useEffect, useState } from "react"
 
-const RiwayatTransaksi = () => {
+const OrderList = () => {
     const [pesanans, setPesanans] = useState([])
 
     const getPesanans = async () => {
@@ -30,19 +30,17 @@ const RiwayatTransaksi = () => {
         <div>
             <NavbarComponent />
             <div className="d-flex justify-content-center " style={{ height: '100vh' }}>
-                <Card style={{ width: '60%', height: '60%', marginTop: '10rem' }}>
+                <Card style={{ width: '60%', height: '100vh', marginTop: '10rem' }}>
                     <CardHeader>
                         Riwayat transaksi
                     </CardHeader>
                     <CardBody>
                         {Array.isArray(pesanans) && pesanans.length > 0 ? (
                             <ListGroup>
-                                {pesanans.map((list) => (
-                                    <ListGroupItem key={list.id}>
-                                        <strong>pesanan No {list.id}</strong>
-                                          {list.items.map(item=>(
-                                            <h1>{item.id}</h1>
-                                          ))}
+                                {pesanans.map((pesanan) => (
+                                    <ListGroupItem key={pesanan.id}>
+                                        <h3><strong>Nomor meja : {pesanan.noMeja}</strong></h3>
+
                                         <Button className="ms-2"> Detail</Button>
                                     </ListGroupItem>
                                 ))}
@@ -55,8 +53,12 @@ const RiwayatTransaksi = () => {
                     </CardFooter>
                 </Card>
             </div>
+
+             <Modal>
+                
+             </Modal>
         </div>
     )
 }
 
-export default RiwayatTransaksi
+export default OrderList

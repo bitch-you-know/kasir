@@ -3,7 +3,7 @@ import DashBoard from "./pages/Dashboard"
 import { useEffect } from 'react'
 import './App.css'
 import { Route, Routes } from "react-router-dom"
-import RiwayatTransaksi from "./pages/RiwayatTransaksi"
+import OrderList from "./pages/OrderList"
 import { ConvertContextProvider } from "./components/ConvertToContext"
 import Succes from "./pages/Success"
 
@@ -16,7 +16,7 @@ const App = () => {
     <ConvertContextProvider>
       <Routes>
         <Route element={<DashBoard />} path="/" />
-        <Route element={<RiwayatTransaksi />} path="/riwayat"/>
+        <Route element={<OrderList />} path="/riwayat"/>
         <Route element={<Succes />} path="/Success" />
       </Routes>
     </ConvertContextProvider>

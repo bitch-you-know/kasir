@@ -15,8 +15,9 @@ const NavbarComponent=()=>{
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Link className="text-light px-3" to={"/"}> DashBoard</Link> 
-          <Link  className="text-light " to={"/riwayat"}>Riwayat Transaksi</Link>
+          <Link className="text-light px-3" to={"/"}> Dashboard</Link> 
+          <Link  className="text-light  px-3" to={"/riwayat"}>Order list</Link>
+          <Link  className="text-light " to={""}>Riwayat Transaksi</Link>
           
         </Nav>
        
