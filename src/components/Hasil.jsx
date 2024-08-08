@@ -19,7 +19,7 @@ const Hasil = () => {
             const result = await axiosinstance.get("/keranjangs");
             const totalPrice = result.data.reduce((accumulator, current) => accumulator + current.total_harga, 0);
             if (result.status === 200) {
-                console.log(result)
+                
                 setKeranjang(result.data)
                 setTotal(totalPrice)
             }

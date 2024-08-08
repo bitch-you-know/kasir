@@ -208,6 +208,67 @@
         }
       ],
       "noMeja": "g-2"
+    },
+    {
+      "id": "369f",
+      "items": [
+        {
+          "id": "8bb9",
+          "jumlah": 2,
+          "nama": "Coffe Late",
+          "total_harga": 30000,
+          "product": {
+            "id": "11",
+            "kode": "K-011",
+            "nama": "Coffe Late",
+            "harga": 15000,
+            "is_ready": true,
+            "gambar": "coffe-late.jpg",
+            "category": {
+              "id": 2,
+              "nama": "Minuman"
+            }
+          }
+        },
+        {
+          "id": "5a5a",
+          "jumlah": 1,
+          "nama": "Es Jeruk",
+          "total_harga": 7000,
+          "product": {
+            "id": "12",
+            "kode": "K-012",
+            "nama": "Es Jeruk",
+            "harga": 7000,
+            "is_ready": true,
+            "gambar": "es-jeruk.jpg",
+            "category": {
+              "id": 2,
+              "nama": "Minuman"
+            }
+          }
+        },
+        {
+          "id": "d400",
+          "jumlah": 1,
+          "nama": "Mie Goreng",
+          "total_harga": 13000,
+          "product": {
+            "id": "5",
+            "kode": "K-05",
+            "nama": "Mie Goreng",
+            "harga": 13000,
+            "is_ready": true,
+            "gambar": "mie-goreng.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Makanan"
+            }
+          }
+        }
+      ],
+      "noMeja": "-G40"
     }
-  ]
+  ],
+  "transsaction": []
 }
