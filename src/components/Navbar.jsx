@@ -17,7 +17,7 @@ const NavbarComponent=()=>{
         >
           <Link className="text-light px-3" to={"/"}> Dashboard</Link> 
           <Link  className="text-light  px-3" to={"/riwayat"}>Order list</Link>
-          <Link  className="text-light " to={""}>Riwayat Transaksi</Link>
+          <Link  className="text-light " to={"/history-transsaction"}>Riwayat Transaksi</Link>
           
         </Nav>
        

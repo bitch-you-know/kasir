@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom"
 import OrderList from "./pages/OrderList"
 import { ConvertContextProvider } from "./components/ConvertToContext"
 import Succes from "./pages/Success"
-
+import HistoryTranssaction from "./pages/HistoryTranssaction"
 
 
 const App = () => {
@@ -18,6 +18,7 @@ const App = () => {
         <Route element={<DashBoard />} path="/" />
         <Route element={<OrderList />} path="/riwayat"/>
         <Route element={<Succes />} path="/Success" />
+        <Route element={<HistoryTranssaction/>} path="/history-transsaction" />
       </Routes>
     </ConvertContextProvider>
     </>
