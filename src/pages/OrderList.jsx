@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, ListGroup, ListGroupItem, Modal } from "react-bootstrap"
+import { Badge, Button, Card, CardBody, CardFooter, CardHeader, ListGroup, ListGroupItem, Modal } from "react-bootstrap"
 import NavbarComponent from "../components/Navbar"
 import { axiosinstance } from "../lib/axios"
 import { useEffect, useState } from "react"
@@ -58,19 +58,25 @@ const OrderList = () => {
                     </CardHeader>
                     <CardBody>
                         {Array.isArray(pesanans) && pesanans.length > 0 ? (
-                            <ListGroup>
+                            <ListGroup className="">
                                 {pesanans.map((pesanan) => (
                                     <ListGroupItem key={pesanan.id}>
                                         <h3><strong>Nomor meja : {pesanan.noMeja}</strong></h3>
-
-
-                                        <Button onClick={() => { handleOpenModal(pesanan.items) }} className="m-2"> Detail</Button>
-                                        <Button onClick={()=>{handleAccept(pesanan)}}>accept</Button>
+                                       
+                                           {pesanan.items.map((foods)=>(
+                                         <ListGroupItem>
+                                            {foods.nama} <Badge>{foods.jumlah}</Badge>
+                                            <br />
+                                            
+                                         </ListGroupItem>
+                                           ))}
+                                      
+                                       <Button variant="success" onClick={()=>{handleAccept(pesanan)}}>accept</Button>
                                     </ListGroupItem>
                                 ))}
                             </ListGroup>
                         ) : (
-                            <p>Tidak ada riwayat transaksi</p>
+                            <p>Belum ada list Order</p>
                         )}
                     </CardBody>
                     <CardFooter>
@@ -78,27 +84,7 @@ const OrderList = () => {
                 </Card>
             </div>
 
-            <Modal show={openModal} onHide={closeModal}>
-                <Modal.Header closeButton>
-                    <Modal.Title><h1><strong>Order List</strong></h1></Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    {Array.isArray(selectDetais) && selectDetais.length > 0 ? (
-                        <ListGroup>
-                            {selectDetais.map((detail) => (
-                                <ListGroupItem key={detail.id}>{detail.nama}</ListGroupItem>
-                            ))}
-
-                        </ListGroup>
-                    ) : (<p>gada</p>)}
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={closeModal}>
-                        Close
-                    </Button>
-
-                </Modal.Footer>
-            </Modal>
+            
         </div >
     )
 }
